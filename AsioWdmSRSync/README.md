@@ -12,7 +12,7 @@ This AutoHotkey script synchronizes the sample rate between the ASIO drivers and
 
 ## Requirements
 
-- **AutoHotkey**: Install from [https://www.autohotkey.com/](https://www.autohotkey.com/).
+- **AutoHotkey**: Install from [https://www.autohotkey.com/](https://www.autohotkey.com/). Choose V1
 - **SoundVolumeView Utility**: Download from [https://www.nirsoft.net/utils/sound_volume_view.html](https://www.nirsoft.net/utils/sound_volume_view.html) and place it in `C:\IT\!AHK\SoundVolumeView\`.
 
 ## Setup Instructions
