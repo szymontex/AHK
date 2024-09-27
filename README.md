@@ -103,15 +103,6 @@ This script is useful for users who often work with multiple overlapping windows
 
 ---
 
-### Continuous Right Arrow and Esc Key Press aka. Tinder Swipe
-
-#### Overview
-
-This script continuously simulates the pressing of the `Right` arrow key followed by the `Esc` key at regular intervals. The script is designed to send the `Right` key press, wait for 700 milliseconds
-
-
----
-
 # AsioWdmSRSync aka. Antelope Audio Sample Rate Synchronization Script Between Asio and WDM Drivers
 
 ## Overview
