@@ -222,4 +222,34 @@ This script is useful for users who often work with multiple overlapping windows
 
 
 
+# Paste Clipboard As File
+
+#### Overview
+
+Adds a **"Wklej ze schowka jako plik"** entry to the Explorer context menu you get when you right-click the empty background of a folder. It writes whatever is on the clipboard into that folder as a file. Screenshots become PNG, text becomes `.txt`, and copied files are copied. The new file immediately enters rename mode, so you type a name and press Enter.
+
+Unlike the rest of this repository this one is PowerShell plus a registry entry, not AutoHotkey. No background process runs - the script is only invoked when the menu entry is clicked.
+
+#### Setup
+
+1. Create `C:\IT\!AHK` and download `PasteClipboardAsFile.ps1` and `PasteClipboardAsFile.reg` into it.
+2. Run `where pwsh`. If PowerShell 7 is missing, replace `pwsh ` with `powershell.exe ` in the `.reg` file.
+3. Import as administrator: `reg import "C:\IT\!AHK\PasteClipboardAsFile.reg"`.
+
+Full instructions, verification commands, uninstall and a ready-to-paste install prompt: [PasteClipboardAsFile/README.md](PasteClipboardAsFile/README.md).
+
+#### How It Works
+
+The `.reg` file registers a verb under `Directory\Background\shell` and passes `%V`, the right-clicked folder, to the script as `-Folder`. The script reads the clipboard through `System.Windows.Forms.Clipboard`, choosing file list over image over text, and never overwrites - a taken name gets `(1)`, `(2)` appended. It then walks open Explorer windows through the Shell COM interface, selects the new file and sends `F2`.
+
+#### Use Cases
+
+Getting a screenshot onto disk without opening an editor, saving a snippet of text straight into the folder you are already looking at, and duplicating a file into another folder without switching windows.
+
+**On Windows 11 the entry is under "Show more options"**, or in the full menu shown by Shift + right-click. Registry verbs do not appear in the new compact Windows 11 context menu.
+
+---
+
+
+
 This project is licensed under the MIT License.

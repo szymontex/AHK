@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\PasteClipboardAsFile]
+@="Wklej ze schowka jako plik"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\PasteClipboardAsFile\command]
+@="pwsh -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File \"C:\\IT\\!AHK\\PasteClipboardAsFile.ps1\" -Folder \"%V\""
